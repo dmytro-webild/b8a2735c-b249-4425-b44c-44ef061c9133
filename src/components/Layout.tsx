@@ -38,7 +38,7 @@ export default function Layout() {
       <footer data-webild-section="Footer" data-section="footer">
         <FooterDrift
           brand="Blackops Media Group"
-          note="Cinematic video production, commercial photography, audio engineering, and graphic design based in Baltimore, Maryland."
+          note="Cinematic video production, commercial photography, audio engineering, and graphic design for clients nationwide."
           columns={[
             {
               title: "Navigation",
@@ -86,7 +86,7 @@ export default function Layout() {
                   href: "mailto:hello@blackopsmediagroup.com"
                 },
                 {
-                  text: "100 N Charles St, Baltimore",
+                  text: "100 N Charles St Studio",
                   href: "#contact"
                 },
                 {
