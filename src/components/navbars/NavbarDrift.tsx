@@ -32,7 +32,7 @@ export default function NavbarDrift({
       <div ref={panelRef} className="relative border border-border bg-[color-mix(in_srgb,var(--background)_72%,transparent)] text-foreground backdrop-blur-[14px]">
         <div className="flex h-[2.875rem] items-center justify-between gap-4 py-[7px] pl-4 pr-[7px]">
           <a href="#home" className="flex items-center gap-2.5 text-[length:var(--text-body)] font-medium">
-            <CompanyLogo className="size-[20px] text-accent" />
+            <CompanyLogo className="h-6 w-auto max-h-6 shrink-0" />
             <p className="whitespace-nowrap tracking-wide">{brand}</p>
           </a>
           <nav aria-label="Main" className="hidden items-center gap-[1.625rem] min-[94.5rem]:flex">
