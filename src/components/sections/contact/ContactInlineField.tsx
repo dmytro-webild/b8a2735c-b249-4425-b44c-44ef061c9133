@@ -1,7 +1,7 @@
 import { useState, type FormEvent } from "react";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
-import { MapPin, Phone, Clock } from "lucide-react";
+import { MapPin, Phone, Clock, Mail } from "lucide-react";
 import BlurReveal from "@/components/kit/BlurReveal";
 
 const cn = (...inputs: ClassValue[]) => twMerge(clsx(inputs));
@@ -17,6 +17,7 @@ type ContactInlineFieldProps = {
   address?: string;
   phone?: string;
   phoneFormatted?: string;
+  contactEmail?: string;
   hoursWeekday?: string;
   hoursSaturday?: string;
   onSubmit?: (data: { name: string; email: string }) => void;
@@ -35,6 +36,7 @@ const ContactInlineField = ({
   address = "1734 Maryland Avenue Baltimore, Md 21201",
   phone = "18633431726",
   phoneFormatted = "1 (863) 343-1726",
+  contactEmail = "info@blackopsmediagroup.online",
   hoursWeekday = "Monday–Friday 9am to 4pm",
   hoursSaturday = "Saturday 10am to 2pm",
   onSubmit,
@@ -68,7 +70,7 @@ const ContactInlineField = ({
         </div>
 
         {/* Contact Info Cards */}
-        <div className="grid w-full grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid w-full grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
           <BlurReveal delay={0.1} className="flex flex-col gap-2.5 border border-border bg-[color-mix(in_srgb,var(--foreground)_3%,transparent)] p-5 text-left transition-colors duration-200 hover:border-accent/40">
             <div className="flex items-center gap-2 text-accent">
               <MapPin className="size-4 shrink-0" />
@@ -86,6 +88,16 @@ const ContactInlineField = ({
             </div>
             <a href={`tel:${phone}`} className="font-sans text-[length:var(--text-body)] text-foreground font-medium leading-snug hover:text-accent transition-colors">
               {phoneFormatted}
+            </a>
+          </BlurReveal>
+
+          <BlurReveal delay={0.18} className="flex flex-col gap-2.5 border border-border bg-[color-mix(in_srgb,var(--foreground)_3%,transparent)] p-5 text-left transition-colors duration-200 hover:border-accent/40">
+            <div className="flex items-center gap-2 text-accent">
+              <Mail className="size-4 shrink-0" />
+              <span className="font-mono text-[length:var(--text-label)] uppercase tracking-wider text-muted-foreground">Email</span>
+            </div>
+            <a href={`mailto:${contactEmail}`} className="font-sans text-[length:var(--text-body)] text-foreground font-medium leading-snug hover:text-accent transition-colors break-all">
+              {contactEmail}
             </a>
           </BlurReveal>
 
