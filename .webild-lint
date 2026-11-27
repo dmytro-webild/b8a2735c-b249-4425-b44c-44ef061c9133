@@ -1,0 +1,10 @@
+src/components/Layout.tsx
+src/components/sections/about/AboutParticleShape.tsx
+src/components/sections/contact/ContactInlineField.tsx
+src/components/sections/faq/FaqPaperAccordion.tsx
+src/components/sections/features/ServicesTiltCards.tsx
+src/components/sections/footer/FooterDrift.tsx
+src/components/sections/hero/HeroDrift.tsx
+src/components/sections/statement/StatementStarPassage.tsx
+src/components/sections/testimonial/TestimonialPaperCarousel.tsx
+src/pages/HomePage.tsx
