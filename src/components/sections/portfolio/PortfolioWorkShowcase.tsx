@@ -72,6 +72,86 @@ const DEFAULT_PROJECTS: ProjectItem[] = [
     },
   },
   {
+    id: "fabralous-fits",
+    title: "Fabralous Fits",
+    client: "Fabralous Fits Apparel",
+    category: "Web Development",
+    year: "2026",
+    tagline: "Custom E-Commerce & Fashion Web Platform",
+    description:
+      "High-fashion e-commerce web build featuring dark-mode aesthetic, responsive product catalog, interactive size guide, and streamlined checkout experience.",
+    imageSrc: "https://img.b2bpic.net/free-photo/medium-shot-man-designing-websites_23-2149930943.jpg",
+    imageAlt: "Fabralous Fits website preview",
+    liveUrl: "https://www.fabralousfits.com",
+    featured: true,
+    services: ["Custom Web Building", "E-Commerce UX/UI", "Catalog Design", "Brand Identity"],
+    results: [
+      "+180% Mobile Conversion Rate",
+      "Seamless Payment Gateway Integration",
+      "High-Contrast Visual Aesthetic",
+    ],
+  },
+  {
+    id: "zbhar-wellness",
+    title: "ZBHAR Wellness",
+    client: "ZBHAR Wellness Organization",
+    category: "Web Development",
+    year: "2026",
+    tagline: "Holistic Community Health & Wellness Platform",
+    description:
+      "Empowering community wellness platform with interactive event calendar, resource center, client membership portal, and clean responsive layout.",
+    imageSrc: "https://img.b2bpic.net/free-photo/young-beautiful-business-woman-sitting-work-table-working-papers-laptop-isolated-gray_231208-11557.jpg",
+    imageAlt: "ZBHAR Wellness website preview",
+    liveUrl: "https://www.zbharwellness.org",
+    featured: false,
+    services: ["Web Architecture", "Community Portal", "Event Management System", "Accessibility Standards"],
+    results: [
+      "3x Increase in Member Sign-ups",
+      "100% Mobile Responsive Layout",
+      "Streamlined Program Navigation",
+    ],
+  },
+  {
+    id: "vivid-threads",
+    title: "Vivid Threads",
+    client: "Vivid Threads",
+    category: "Web Development",
+    year: "2026",
+    tagline: "Modern Lifestyle & Apparel Web Showcase",
+    description:
+      "A sleek, lifestyle-driven web build designed to showcase dynamic lookbooks, custom brand media, and fast interactive shopping galleries.",
+    imageSrc: "https://img.b2bpic.net/free-photo/man-doing-product-photography_23-2148970201.jpg",
+    imageAlt: "Vivid Threads website preview",
+    liveUrl: "https://www.vividthreads.com/",
+    featured: false,
+    services: ["Web Building & Design", "Lookbook Showcase", "Media Optimization", "Mobile-First UX"],
+    results: [
+      "+140% Engagement & Time on Site",
+      "Ultra-Fast Media Loading",
+      "Custom Interactive Lookbook Grid",
+    ],
+  },
+  {
+    id: "one-dose",
+    title: "One Dose",
+    client: "One Dose Health",
+    category: "Web Development",
+    year: "2026",
+    tagline: "Wix Health & Clinical Services Portal",
+    description:
+      "Clean, modern medical web platform providing patients with direct access to treatment information, consultation scheduling, and healthcare resources.",
+    imageSrc: "https://img.b2bpic.net/free-photo/freelancer-using-retouching-program-touchscreen-device_482257-121823.jpg",
+    imageAlt: "One Dose website preview",
+    liveUrl: "https://blackops1368.wixsite.com/one-dose",
+    featured: false,
+    services: ["Wix Site Building", "Healthcare UX", "Patient Consultation Funnel", "SEO & Analytics"],
+    results: [
+      "Instant Consultation Booking",
+      "High-Trust Design System",
+      "Optimized Mobile Experience",
+    ],
+  },
+  {
     id: "aethel-commercial-film",
     title: "Aethel Motion Commercial",
     client: "Aethel Tech Innovations",
@@ -83,7 +163,7 @@ const DEFAULT_PROJECTS: ProjectItem[] = [
     imageSrc: "https://img.b2bpic.net/free-photo/freelancer-using-retouching-program-touchscreen-device_482257-121823.jpg",
     imageAlt: "Video production crew editing commercial film",
     liveUrl: "#contact",
-    featured: true,
+    featured: false,
     services: ["4K Video Production", "Cinematic Color Grading", "Glitch Motion Graphics", "Sound Sync"],
     results: [
       "1.4M+ Video Views Across Channels",
@@ -129,46 +209,6 @@ const DEFAULT_PROJECTS: ProjectItem[] = [
       "Unified Brand Guidelines Delivered",
       "300+ Marketing Assets Created",
       "+85% Brand Recognition Index",
-    ],
-  },
-  {
-    id: "aerodynamics-portal",
-    title: "AeroDynamics Portal",
-    client: "AeroDynamics Global",
-    category: "Web Development",
-    year: "2026",
-    tagline: "Interactive Web Platform & Media Hub",
-    description:
-      "Enterprise web building project with dynamic video background integration, real-time media showcase, and seamless responsive navigation.",
-    imageSrc: "https://img.b2bpic.net/free-photo/man-doing-product-photography_23-2148970201.jpg",
-    imageAlt: "Web design and photography showcase for AeroDynamics",
-    liveUrl: "#contact",
-    featured: false,
-    services: ["Custom Web Development", "Interactive Media Grid", "Performance Optimization"],
-    results: [
-      "99/100 Google Lighthouse Score",
-      "Zero Downtime Architecture",
-      "Global Content Delivery Network",
-    ],
-  },
-  {
-    id: "apex-launch-trailer",
-    title: "Apex Motors Launch Film",
-    client: "Apex Performance Motors",
-    category: "Video & Film",
-    year: "2025",
-    tagline: "Aerial FPV & High-Octane Sound Edit",
-    description:
-      "Dynamic automotive commercial combining FPV drone shots with precision audio mixing to launch a flagship luxury automotive line.",
-    imageSrc: "https://img.b2bpic.net/free-photo/young-beautiful-business-woman-sitting-work-table-working-papers-laptop-isolated-gray_231208-11557.jpg",
-    imageAlt: "Film production editing suite preview",
-    liveUrl: "#contact",
-    featured: false,
-    services: ["Drone Cinematography", "Audio Post-Production", "Trailer Editing"],
-    results: [
-      "Over 500K Social Shares",
-      "National TV Spot Placement",
-      "Best Commercial Editing Award",
     ],
   },
 ];
@@ -352,7 +392,7 @@ export default function PortfolioWorkShowcase({
                       onClick={(e) => e.stopPropagation()}
                     >
                       <ExternalLink className="size-4" />
-                      <span>Live Site</span>
+                      <span>Visit Site</span>
                     </a>
                   )}
                 </div>
@@ -409,7 +449,8 @@ export default function PortfolioWorkShowcase({
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-muted-foreground hover:text-primary transition-colors p-1"
-                        title="Visit Live Reference Site"
+                        title="Visit Site"
+                        aria-label="Visit Site"
                       >
                         <ExternalLink className="size-4" />
                       </a>
@@ -542,7 +583,7 @@ export default function PortfolioWorkShowcase({
                           className="btn-primary rounded-full text-center flex items-center justify-center gap-2 py-3"
                         >
                           <ExternalLink className="size-4" />
-                          <span>Visit Live Website</span>
+                          <span>Visit Site</span>
                         </a>
                       ) : (
                         <a
