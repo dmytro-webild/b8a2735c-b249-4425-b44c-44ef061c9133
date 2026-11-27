@@ -24,7 +24,7 @@ export default function FooterDrift({
       <div className="mx-auto grid w-[var(--container)] grid-cols-2 gap-8 border border-border bg-[color-mix(in_srgb,var(--background)_85%,transparent)] p-[1.375rem] backdrop-blur-[14px] lg:grid-cols-[1.6fr_1fr_1fr_1fr] lg:p-8">
         <div className="col-span-2 grid content-start gap-[1.125rem] lg:col-span-1">
           <a href="#home" className="flex items-center shrink-0" aria-label={brand || "Blackops Media Group"}>
-            <CompanyLogo className="h-8 w-auto max-h-8 shrink-0" />
+            <CompanyLogo className="h-10 sm:h-12 md:h-14 w-auto max-h-14 shrink-0" />
           </a>
           {note && <p className="max-w-[18.75rem] text-balance text-[length:var(--text-label)] uppercase leading-[1.35] tracking-[0.02em]">{note}</p>}
         </div>

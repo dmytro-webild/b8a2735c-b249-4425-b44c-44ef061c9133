@@ -28,11 +28,11 @@ export default function NavbarDrift({
   useMenuDialog(open, panelRef, () => setOpen(false));
 
   return (
-    <header className={`fixed left-1/2 top-3.5 z-50 w-[min(41.25rem,100%-2*var(--gutter))] -translate-x-1/2 ${className ?? ""}`}>
+    <header className={`fixed left-1/2 top-3.5 z-50 w-[min(56rem,100%-2*var(--gutter))] -translate-x-1/2 ${className ?? ""}`}>
       <div ref={panelRef} className="relative border border-border bg-[color-mix(in_srgb,var(--background)_72%,transparent)] text-foreground backdrop-blur-[14px]">
-        <div className="flex h-[3.25rem] items-center justify-between gap-4 py-1.5 pl-4 pr-[7px]">
-          <a href="#home" className="flex items-center shrink-0" aria-label={brand || "Blackops Media Group"}>
-            <CompanyLogo className="h-8 w-auto max-h-8 shrink-0" />
+        <div className="flex h-[4.25rem] sm:h-[4.75rem] items-center justify-between gap-4 py-2 pl-4 sm:pl-5 pr-[7px]">
+          <a href="#home" className="flex items-center shrink-0 py-1" aria-label={brand || "Blackops Media Group"}>
+            <CompanyLogo className="h-11 sm:h-13 md:h-14 lg:h-16 w-auto max-h-16 shrink-0" />
           </a>
           <nav aria-label="Main" className="hidden items-center gap-[1.625rem] min-[94.5rem]:flex">
             {navItems.map((item) => (
