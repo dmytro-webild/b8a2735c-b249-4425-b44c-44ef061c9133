@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import {
@@ -12,6 +12,10 @@ import {
   CheckCircle2,
   Sparkles,
   Film,
+  Volume2,
+  VolumeX,
+  Play,
+  Pause,
 } from "lucide-react";
 import BlurReveal from "@/components/kit/BlurReveal";
 import Media from "@/components/kit/Media";
@@ -294,10 +298,45 @@ export default function PortfolioWorkShowcase({
 }: PortfolioWorkShowcaseProps) {
   const [activeCategory, setActiveCategory] = useState<PortfolioCategory>("All");
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
+  const modalVideoRef = useRef<HTMLVideoElement | null>(null);
+  const [isMuted, setIsMuted] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(true);
 
   const filteredProjects = projects.filter(
     (item) => activeCategory === "All" || item.category === activeCategory
   );
+
+  useEffect(() => {
+    if (selectedProject?.videoSrc) {
+      setIsMuted(true);
+      setIsPlaying(true);
+      if (modalVideoRef.current) {
+        modalVideoRef.current.muted = true;
+        modalVideoRef.current.play().catch(() => {
+          setIsPlaying(false);
+        });
+      }
+    }
+  }, [selectedProject]);
+
+  const toggleMute = () => {
+    if (modalVideoRef.current) {
+      const nextMuted = !modalVideoRef.current.muted;
+      modalVideoRef.current.muted = nextMuted;
+      setIsMuted(nextMuted);
+    }
+  };
+
+  const togglePlay = () => {
+    if (modalVideoRef.current) {
+      if (modalVideoRef.current.paused) {
+        modalVideoRef.current.play().then(() => setIsPlaying(true)).catch(() => {});
+      } else {
+        modalVideoRef.current.pause();
+        setIsPlaying(false);
+      }
+    }
+  };
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -412,15 +451,22 @@ export default function PortfolioWorkShowcase({
               <div className="relative aspect-[16/10] w-full overflow-hidden bg-deep">
                 {project.videoSrc ? (
                   <video
-                    src={project.videoSrc}
                     poster={project.imageSrc}
                     autoPlay
                     muted
                     loop
                     playsInline
+                    preload="auto"
                     className="size-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     aria-label={project.imageAlt ?? project.title}
-                  />
+                  >
+                    <source src={project.videoSrc} type="video/mp4" />
+                    <img
+                      src={project.imageSrc}
+                      alt={project.imageAlt ?? project.title}
+                      className="size-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    />
+                  </video>
                 ) : (
                   <Media
                     src={project.imageSrc}
@@ -581,21 +627,76 @@ export default function PortfolioWorkShowcase({
                 </div>
 
                 {/* Modal Media */}
-                <div className="relative aspect-[16/9] w-full overflow-hidden border border-border bg-deep">
+                <div className="relative aspect-[16/9] w-full overflow-hidden border border-border bg-deep rounded-lg">
                   {selectedProject.videoSrc ? (
-                    <div className="relative size-full">
+                    <div className="relative size-full group/video">
                       <video
-                        src={selectedProject.videoSrc}
+                        ref={modalVideoRef}
                         poster={selectedProject.imageSrc}
-                        controls
                         autoPlay
+                        muted
+                        loop
                         playsInline
+                        controls
+                        preload="metadata"
                         className="size-full object-cover"
                         aria-label={selectedProject.imageAlt ?? selectedProject.title}
-                      />
-                      <div className="absolute top-3 left-3 pointer-events-none flex items-center gap-1.5 rounded-full border border-primary/50 bg-background/90 px-3 py-1 font-mono text-[length:var(--text-label)] uppercase text-primary backdrop-blur-md shadow-md z-10">
-                        <Film className="size-3.5 text-primary animate-pulse" />
-                        <span>4K Commercial Reel</span>
+                        onPlay={() => setIsPlaying(true)}
+                        onPause={() => setIsPlaying(false)}
+                      >
+                        <source src={selectedProject.videoSrc} type="video/mp4" />
+                        <img
+                          src={selectedProject.imageSrc}
+                          alt={selectedProject.imageAlt ?? selectedProject.title}
+                          className="size-full object-cover"
+                        />
+                      </video>
+
+                      {/* Top Overlay Badges */}
+                      <div className="absolute top-3 left-3 pointer-events-none flex items-center gap-2 z-10">
+                        <div className="flex items-center gap-1.5 rounded-full border border-primary/50 bg-background/90 px-3 py-1 font-mono text-[length:var(--text-label)] uppercase text-primary backdrop-blur-md shadow-md">
+                          <Film className="size-3.5 text-primary animate-pulse" />
+                          <span>4K Commercial Reel</span>
+                        </div>
+                      </div>
+
+                      {/* Quick Audio & Control Button Overlay */}
+                      <div className="absolute bottom-14 right-4 z-20 flex items-center gap-2">
+                        <button
+                          type="button"
+                          onClick={toggleMute}
+                          className="flex items-center gap-2 rounded-full border border-primary/60 bg-background/90 px-3.5 py-1.5 font-mono text-[length:var(--text-small)] text-primary backdrop-blur-md shadow-lg transition-all hover:bg-primary hover:text-primary-foreground"
+                          title={isMuted ? "Unmute sound" : "Mute sound"}
+                        >
+                          {isMuted ? (
+                            <>
+                              <VolumeX className="size-4 animate-bounce" />
+                              <span>Unmute Sound</span>
+                            </>
+                          ) : (
+                            <>
+                              <Volume2 className="size-4" />
+                              <span>Audio Active</span>
+                            </>
+                          )}
+                        </button>
+                        <button
+                          type="button"
+                          onClick={togglePlay}
+                          className="flex items-center gap-1.5 rounded-full border border-border bg-background/90 px-3 py-1.5 font-mono text-[length:var(--text-small)] text-foreground backdrop-blur-md shadow-lg transition-all hover:border-primary"
+                        >
+                          {isPlaying ? (
+                            <>
+                              <Pause className="size-3.5" />
+                              <span>Pause</span>
+                            </>
+                          ) : (
+                            <>
+                              <Play className="size-3.5" />
+                              <span>Play</span>
+                            </>
+                          )}
+                        </button>
                       </div>
                     </div>
                   ) : (
