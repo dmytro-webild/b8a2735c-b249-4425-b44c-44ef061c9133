@@ -80,7 +80,7 @@ const DEFAULT_PROJECTS: ProjectItem[] = [
     tagline: "Custom E-Commerce & Fashion Web Platform",
     description:
       "High-fashion e-commerce web build featuring dark-mode aesthetic, responsive product catalog, interactive size guide, and streamlined checkout experience.",
-    imageSrc: "https://img.b2bpic.net/free-photo/medium-shot-man-designing-websites_23-2149930943.jpg",
+    imageSrc: "https://img.b2bpic.net/free-photo/medium-shot-man-designing-websites_23-2149930943.jpg?_wi=1",
     imageAlt: "Fabralous Fits website preview",
     liveUrl: "https://www.fabralousfits.com",
     featured: true,
@@ -100,7 +100,7 @@ const DEFAULT_PROJECTS: ProjectItem[] = [
     tagline: "Holistic Community Health & Wellness Platform",
     description:
       "Empowering community wellness platform with interactive event calendar, resource center, client membership portal, and clean responsive layout.",
-    imageSrc: "https://img.b2bpic.net/free-photo/young-beautiful-business-woman-sitting-work-table-working-papers-laptop-isolated-gray_231208-11557.jpg",
+    imageSrc: "https://img.b2bpic.net/free-photo/young-beautiful-business-woman-sitting-work-table-working-papers-laptop-isolated-gray_231208-11557.jpg?_wi=1",
     imageAlt: "ZBHAR Wellness website preview",
     liveUrl: "https://www.zbharwellness.org",
     featured: false,
@@ -120,7 +120,7 @@ const DEFAULT_PROJECTS: ProjectItem[] = [
     tagline: "Modern Lifestyle & Apparel Web Showcase",
     description:
       "A sleek, lifestyle-driven web build designed to showcase dynamic lookbooks, custom brand media, and fast interactive shopping galleries.",
-    imageSrc: "https://img.b2bpic.net/free-photo/man-doing-product-photography_23-2148970201.jpg",
+    imageSrc: "https://img.b2bpic.net/free-photo/man-doing-product-photography_23-2148970201.jpg?_wi=1",
     imageAlt: "Vivid Threads website preview",
     liveUrl: "https://www.vividthreads.com/",
     featured: false,
@@ -140,7 +140,7 @@ const DEFAULT_PROJECTS: ProjectItem[] = [
     tagline: "Wix Health & Clinical Services Portal",
     description:
       "Clean, modern medical web platform providing patients with direct access to treatment information, consultation scheduling, and healthcare resources.",
-    imageSrc: "https://img.b2bpic.net/free-photo/freelancer-using-retouching-program-touchscreen-device_482257-121823.jpg",
+    imageSrc: "https://img.b2bpic.net/free-photo/freelancer-using-retouching-program-touchscreen-device_482257-121823.jpg?_wi=1",
     imageAlt: "One Dose website preview",
     liveUrl: "https://blackops1368.wixsite.com/one-dose",
     featured: false,
@@ -160,7 +160,7 @@ const DEFAULT_PROJECTS: ProjectItem[] = [
     tagline: "Cinematic 4K Brand & Product Showcase",
     description:
       "Full cinematic video production including dark-theme color grading, high-speed camera work, glitch visual effects, and broadcast-ready finishing for enterprise marketing.",
-    imageSrc: "https://img.b2bpic.net/free-photo/freelancer-using-retouching-program-touchscreen-device_482257-121823.jpg",
+    imageSrc: "https://img.b2bpic.net/free-photo/freelancer-using-retouching-program-touchscreen-device_482257-121823.jpg?_wi=2",
     imageAlt: "Video production crew editing commercial film",
     liveUrl: "#contact",
     featured: false,
@@ -180,7 +180,7 @@ const DEFAULT_PROJECTS: ProjectItem[] = [
     tagline: "Executive Audio Mastering & Custom Score",
     description:
       "Crisp multi-track audio engineering, sound effect layering, and voiceover mastering for an executive podcast series and corporate film intros.",
-    imageSrc: "https://img.b2bpic.net/free-photo/audio-technician-working-recording-editing-new-music-studio_482257-93653.jpg",
+    imageSrc: "https://img.b2bpic.net/free-photo/audio-technician-working-recording-editing-new-music-studio_482257-93653.jpg?_wi=1",
     imageAlt: "Audio technician working on studio recording console",
     liveUrl: "#contact",
     featured: false,
@@ -200,7 +200,7 @@ const DEFAULT_PROJECTS: ProjectItem[] = [
     tagline: "High-Contrast Visual Identity & 3D Assets",
     description:
       "Complete graphic design architecture featuring custom typography, vector identity assets, dark mode UI patterns, and high-impact digital social collateral.",
-    imageSrc: "https://img.b2bpic.net/free-photo/medium-shot-man-designing-websites_23-2149930943.jpg",
+    imageSrc: "https://img.b2bpic.net/free-photo/medium-shot-man-designing-websites_23-2149930943.jpg?_wi=2",
     imageAlt: "Graphic designer creating visual brand identity",
     liveUrl: "#contact",
     featured: false,
