@@ -60,7 +60,7 @@ export default function HomePage() {
             {
               title: "Cinematic Video Production",
               description: "High-contrast commercial video editing, color grading, and broadcast-ready finishing.",
-              imageSrc: "https://img.b2bpic.net/free-photo/freelancer-using-retouching-program-touchscreen-device_482257-121823.jpg",
+              imageSrc: "https://img.b2bpic.net/free-photo/freelancer-using-retouching-program-touchscreen-device_482257-121823.jpg?_wi=3",
               imageAlt: "Freelancer using retouching program on touchscreen device",
               href: "#work",
               linkText: "Explore service"
@@ -68,7 +68,7 @@ export default function HomePage() {
             {
               title: "Commercial Photography",
               description: "Crisp studio product photography and high-resolution commercial images for digital and print.",
-              imageSrc: "https://img.b2bpic.net/free-photo/man-doing-product-photography_23-2148970201.jpg",
+              imageSrc: "https://img.b2bpic.net/free-photo/man-doing-product-photography_23-2148970201.jpg?_wi=2",
               imageAlt: "Man doing product photography",
               href: "#work",
               linkText: "Explore service"
@@ -76,7 +76,7 @@ export default function HomePage() {
             {
               title: "Audio & Sound Design",
               description: "Crystal-clear sound engineering, custom voiceovers, and rich audio production for media.",
-              imageSrc: "https://img.b2bpic.net/free-photo/audio-technician-working-recording-editing-new-music-studio_482257-93653.jpg",
+              imageSrc: "https://img.b2bpic.net/free-photo/audio-technician-working-recording-editing-new-music-studio_482257-93653.jpg?_wi=2",
               imageAlt: "Audio technician working on recording and editing new music in studio",
               href: "#work",
               linkText: "Explore service"
@@ -84,7 +84,7 @@ export default function HomePage() {
             {
               title: "Graphic & Web Design",
               description: "Modern visual identity, sharp typography, and web development tailored to your brand.",
-              imageSrc: "https://img.b2bpic.net/free-photo/medium-shot-man-designing-websites_23-2149930943.jpg",
+              imageSrc: "https://img.b2bpic.net/free-photo/medium-shot-man-designing-websites_23-2149930943.jpg?_wi=3",
               imageAlt: "Medium shot man designing websites",
               href: "#work",
               linkText: "Explore service"
@@ -142,7 +142,7 @@ export default function HomePage() {
               quote: "From raw video footage to final edit, their production crew brought unmatched cinematic style and creative precision.",
               name: "Leah Webb",
               role: "Operations Manager",
-              imageSrc: "https://img.b2bpic.net/free-photo/young-beautiful-business-woman-sitting-work-table-working-papers-laptop-isolated-gray_231208-11557.jpg",
+              imageSrc: "https://img.b2bpic.net/free-photo/young-beautiful-business-woman-sitting-work-table-working-papers-laptop-isolated-gray_231208-11557.jpg?_wi=2",
               imageAlt: "Young beautiful business woman sitting at work table working on papers and laptop isolated on gray"
             }
           ]}
