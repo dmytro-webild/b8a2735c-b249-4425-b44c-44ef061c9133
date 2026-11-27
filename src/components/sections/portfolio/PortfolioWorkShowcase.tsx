@@ -301,6 +301,8 @@ export default function PortfolioWorkShowcase({
   const modalVideoRef = useRef<HTMLVideoElement | null>(null);
   const [isMuted, setIsMuted] = useState(true);
   const [isPlaying, setIsPlaying] = useState(true);
+  const [failedVideoIds, setFailedVideoIds] = useState<Record<string, boolean>>({});
+  const [modalVideoError, setModalVideoError] = useState(false);
 
   const filteredProjects = projects.filter(
     (item) => activeCategory === "All" || item.category === activeCategory
@@ -310,14 +312,18 @@ export default function PortfolioWorkShowcase({
     if (selectedProject?.videoSrc) {
       setIsMuted(true);
       setIsPlaying(true);
-      if (modalVideoRef.current) {
-        modalVideoRef.current.muted = true;
-        modalVideoRef.current.play().catch(() => {
-          setIsPlaying(false);
-        });
-      }
+      setModalVideoError(false);
     }
   }, [selectedProject]);
+
+  const handleModalVideoRef = (node: HTMLVideoElement | null) => {
+    modalVideoRef.current = node;
+    if (node) {
+      node.muted = true;
+      node.playsInline = true;
+      node.play().then(() => setIsPlaying(true)).catch(() => setIsPlaying(false));
+    }
+  };
 
   const toggleMute = () => {
     if (modalVideoRef.current) {
@@ -449,22 +455,25 @@ export default function PortfolioWorkShowcase({
             >
               {/* Media Container */}
               <div className="relative aspect-[16/10] w-full overflow-hidden bg-deep">
-                {project.videoSrc ? (
+                {project.videoSrc && !failedVideoIds[project.id] ? (
                   <video
+                    src={project.videoSrc}
                     poster={project.imageSrc}
                     autoPlay
                     muted
                     loop
                     playsInline
-                    preload="auto"
+                    preload="metadata"
                     className="size-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     aria-label={project.imageAlt ?? project.title}
+                    onError={() =>
+                      setFailedVideoIds((prev) => ({ ...prev, [project.id]: true }))
+                    }
                   >
                     <source src={project.videoSrc} type="video/mp4" />
-                    <img
-                      src={project.imageSrc}
-                      alt={project.imageAlt ?? project.title}
-                      className="size-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    <source
+                      src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+                      type="video/mp4"
                     />
                   </video>
                 ) : (
@@ -628,27 +637,29 @@ export default function PortfolioWorkShowcase({
 
                 {/* Modal Media */}
                 <div className="relative aspect-[16/9] w-full overflow-hidden border border-border bg-deep rounded-lg">
-                  {selectedProject.videoSrc ? (
-                    <div className="relative size-full group/video">
+                  {selectedProject.videoSrc && !modalVideoError ? (
+                    <div className="relative size-full group/video bg-black rounded-lg overflow-hidden">
                       <video
-                        ref={modalVideoRef}
+                        ref={handleModalVideoRef}
+                        src={selectedProject.videoSrc}
                         poster={selectedProject.imageSrc}
                         autoPlay
                         muted
                         loop
                         playsInline
                         controls
-                        preload="metadata"
+                        preload="auto"
                         className="size-full object-cover"
                         aria-label={selectedProject.imageAlt ?? selectedProject.title}
                         onPlay={() => setIsPlaying(true)}
                         onPause={() => setIsPlaying(false)}
+                        onVolumeChange={(e) => setIsMuted(e.currentTarget.muted)}
+                        onError={() => setModalVideoError(true)}
                       >
                         <source src={selectedProject.videoSrc} type="video/mp4" />
-                        <img
-                          src={selectedProject.imageSrc}
-                          alt={selectedProject.imageAlt ?? selectedProject.title}
-                          className="size-full object-cover"
+                        <source
+                          src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+                          type="video/mp4"
                         />
                       </video>
 
@@ -675,7 +686,7 @@ export default function PortfolioWorkShowcase({
                             </>
                           ) : (
                             <>
-                              <Volume2 className="size-4" />
+                              <Volume2 className="size-4 text-emerald-400" />
                               <span>Audio Active</span>
                             </>
                           )}
