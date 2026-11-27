@@ -22,6 +22,10 @@ export default function Layout() {
               href: "#services"
             },
             {
+              name: "Work",
+              href: "#work"
+            },
+            {
               name: "Studio",
               href: "#model"
             }
@@ -57,7 +61,7 @@ export default function Layout() {
                 },
                 {
                   text: "Work Showcase",
-                  href: "#model"
+                  href: "#work"
                 }
               ]
             },
