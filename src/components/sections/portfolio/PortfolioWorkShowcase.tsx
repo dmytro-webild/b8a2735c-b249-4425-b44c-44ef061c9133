@@ -11,6 +11,7 @@ import {
   Palette,
   CheckCircle2,
   Sparkles,
+  Film,
 } from "lucide-react";
 import BlurReveal from "@/components/kit/BlurReveal";
 import Media from "@/components/kit/Media";
@@ -154,24 +155,35 @@ const DEFAULT_PROJECTS: ProjectItem[] = [
   },
   {
     id: "aethel-commercial-film",
-    title: "Aethel Motion Commercial",
+    title: "Aethel Motion 4K Commercial",
     client: "Aethel Tech Innovations",
     category: "Video & Film",
     year: "2026",
-    tagline: "Cinematic 4K Brand & Product Showcase",
+    tagline: "Cinematic 4K Commercial Brand & Product Showcase",
     description:
-      "Full cinematic 4K video production reel featuring dark-theme color grading, high-speed camera work, glitch visual effects, and broadcast-ready finishing for enterprise marketing.",
+      "Full cinematic 4K video production reel for Aethel Motion. Features high-speed digital camera work, dark-theme sci-fi color grading, custom visual effects, Dolby audio sync, and broadcast-ready 4K finishing for enterprise marketing campaigns.",
     imageSrc: "https://images.pexels.com/photos/40399670/pexels-photo-40399670.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
     videoSrc: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
     imageAlt: "Aethel Motion 4K cinematic commercial video reel preview",
     liveUrl: "#contact",
-    featured: false,
-    services: ["4K Video Production", "Cinematic Color Grading", "Glitch Motion Graphics", "Sound Sync"],
-    results: [
-      "1.4M+ Video Views Across Channels",
-      "45% Increase in Ad Engagement",
-      "Featured on Broadcast Digital Networks",
+    featured: true,
+    services: [
+      "4K Video Production",
+      "Cinematic Color Grading",
+      "Glitch Motion Graphics",
+      "Dolby Sound Sync",
     ],
+    results: [
+      "4K Ultra HD Broadcast Output (3840x2160)",
+      "1.4M+ Commercial Views Across Channels",
+      "45% Increase in Ad Campaign Engagement",
+    ],
+    testimonial: {
+      quote:
+        "Blackops Media Group delivered a breathtaking 4K commercial film for Aethel Motion. The color grading and cinematic visual effects elevated our brand presence immediately.",
+      author: "Evelyn Reed",
+      role: "Creative Director, Aethel Tech Innovations",
+    },
   },
   {
     id: "vanguard-sound-design",
@@ -419,10 +431,17 @@ export default function PortfolioWorkShowcase({
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-80 transition-opacity duration-300 group-hover:opacity-60" />
 
                 {/* Top Badges */}
-                <div className="absolute top-4 left-4 right-4 flex items-center justify-between gap-2">
-                  <span className="rounded-full border border-border bg-background/80 px-3 py-1 font-mono text-[length:var(--text-label)] uppercase backdrop-blur-md text-foreground">
-                    {project.category}
-                  </span>
+                <div className="absolute top-4 left-4 right-4 flex items-center justify-between gap-2 z-10">
+                  <div className="flex items-center gap-2">
+                    <span className="rounded-full border border-border bg-background/80 px-3 py-1 font-mono text-[length:var(--text-label)] uppercase backdrop-blur-md text-foreground">
+                      {project.category}
+                    </span>
+                    {project.videoSrc && (
+                      <span className="inline-flex items-center gap-1 rounded-full border border-primary/50 bg-background/90 px-2.5 py-1 font-mono text-[0.7rem] uppercase text-primary backdrop-blur-md shadow-sm">
+                        <Film className="size-3 text-primary animate-pulse" /> 4K Ultra HD
+                      </span>
+                    )}
+                  </div>
                   <span className="rounded-full border border-border bg-background/80 px-3 py-1 font-mono text-[length:var(--text-label)] text-muted-foreground backdrop-blur-md">
                     {project.year}
                   </span>
@@ -564,16 +583,21 @@ export default function PortfolioWorkShowcase({
                 {/* Modal Media */}
                 <div className="relative aspect-[16/9] w-full overflow-hidden border border-border bg-deep">
                   {selectedProject.videoSrc ? (
-                    <video
-                      src={selectedProject.videoSrc}
-                      poster={selectedProject.imageSrc}
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                      className="size-full object-cover"
-                      aria-label={selectedProject.imageAlt ?? selectedProject.title}
-                    />
+                    <div className="relative size-full">
+                      <video
+                        src={selectedProject.videoSrc}
+                        poster={selectedProject.imageSrc}
+                        controls
+                        autoPlay
+                        playsInline
+                        className="size-full object-cover"
+                        aria-label={selectedProject.imageAlt ?? selectedProject.title}
+                      />
+                      <div className="absolute top-3 left-3 pointer-events-none flex items-center gap-1.5 rounded-full border border-primary/50 bg-background/90 px-3 py-1 font-mono text-[length:var(--text-label)] uppercase text-primary backdrop-blur-md shadow-md z-10">
+                        <Film className="size-3.5 text-primary animate-pulse" />
+                        <span>4K Commercial Reel</span>
+                      </div>
+                    </div>
                   ) : (
                     <Media
                       src={selectedProject.imageSrc}
