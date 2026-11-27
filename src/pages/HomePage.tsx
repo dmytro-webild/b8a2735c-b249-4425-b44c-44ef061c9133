@@ -2,6 +2,7 @@ import HeroDrift from "@/components/sections/hero/HeroDrift";
 import TrustedByLogos from "@/components/sections/trusted/TrustedByLogos";
 import StatementStarPassage from "@/components/sections/statement/StatementStarPassage";
 import ServicesTiltCards from "@/components/sections/features/ServicesTiltCards";
+import PortfolioWorkShowcase from "@/components/sections/portfolio/PortfolioWorkShowcase";
 import AboutParticleShape from "@/components/sections/about/AboutParticleShape";
 import TestimonialPaperCarousel from "@/components/sections/testimonial/TestimonialPaperCarousel";
 import FaqPaperAccordion from "@/components/sections/faq/FaqPaperAccordion";
@@ -34,7 +35,7 @@ export default function HomePage() {
           ]}
           primaryButton={{
             text: "View work",
-            href: "#model"
+            href: "#work"
           }}
           introDelay={1.4}
         />
@@ -61,7 +62,7 @@ export default function HomePage() {
               description: "High-contrast commercial video editing, color grading, and broadcast-ready finishing.",
               imageSrc: "https://img.b2bpic.net/free-photo/freelancer-using-retouching-program-touchscreen-device_482257-121823.jpg",
               imageAlt: "Freelancer using retouching program on touchscreen device",
-              href: "#model",
+              href: "#work",
               linkText: "Explore service"
             },
             {
@@ -69,7 +70,7 @@ export default function HomePage() {
               description: "Crisp studio product photography and high-resolution commercial images for digital and print.",
               imageSrc: "https://img.b2bpic.net/free-photo/man-doing-product-photography_23-2148970201.jpg",
               imageAlt: "Man doing product photography",
-              href: "#model",
+              href: "#work",
               linkText: "Explore service"
             },
             {
@@ -77,7 +78,7 @@ export default function HomePage() {
               description: "Crystal-clear sound engineering, custom voiceovers, and rich audio production for media.",
               imageSrc: "https://img.b2bpic.net/free-photo/audio-technician-working-recording-editing-new-music-studio_482257-93653.jpg",
               imageAlt: "Audio technician working on recording and editing new music in studio",
-              href: "#model",
+              href: "#work",
               linkText: "Explore service"
             },
             {
@@ -85,12 +86,16 @@ export default function HomePage() {
               description: "Modern visual identity, sharp typography, and web development tailored to your brand.",
               imageSrc: "https://img.b2bpic.net/free-photo/medium-shot-man-designing-websites_23-2149930943.jpg",
               imageAlt: "Medium shot man designing websites",
-              href: "#model",
+              href: "#work",
               linkText: "Explore service"
             }
           ]}
           linkText="Explore services"
         />
+      </div>
+
+      <div id="work" data-webild-section="PortfolioWorkShowcase" data-webild-section-id="PortfolioWorkShowcase-1" data-section="work">
+        <PortfolioWorkShowcase />
       </div>
 
       <div id="model" data-webild-section="AboutParticleShape" data-webild-section-id="AboutParticleShape-1" data-section="model">
