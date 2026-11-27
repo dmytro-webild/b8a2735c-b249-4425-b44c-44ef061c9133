@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { animate, motion, useReducedMotion } from "motion/react";
 import { driftCount } from "@/components/kit/driftStats";
+import CompanyLogo from "@/components/kit/CompanyLogo";
 
 type LoaderParticleCountProps = {
   brand?: string;
@@ -64,15 +65,7 @@ export default function LoaderParticleCount({ brand = "Drift", label = "Particle
         className="mx-auto flex h-full w-[var(--container)] flex-col justify-between py-7"
       >
         <div className="flex items-center gap-2.5 text-[length:var(--text-body)]">
-          <svg viewBox="0 0 18 18" className="size-[18px]">
-            <g fill="currentColor">
-              <circle cx="9" cy="2.2" r="1.3" />
-              <circle cx="15.8" cy="9" r="1.3" />
-              <circle cx="9" cy="15.8" r="1.3" />
-              <circle cx="2.2" cy="9" r="1.3" />
-              <circle cx="9" cy="9" r="1.6" />
-            </g>
-          </svg>
+          <CompanyLogo className="size-[20px] text-accent" />
           <p>{brand}</p>
         </div>
         <div className="grid gap-1.5">

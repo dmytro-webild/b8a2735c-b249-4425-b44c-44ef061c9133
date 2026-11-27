@@ -1,7 +1,9 @@
 import BlurReveal from "@/components/kit/BlurReveal";
 import StarButton from "@/components/kit/StarButton";
+import CompanyLogo from "@/components/kit/CompanyLogo";
 
 type HeroDriftProps = {
+  brand?: string;
   title?: string;
   description?: string;
   tags?: string[];
@@ -12,6 +14,7 @@ type HeroDriftProps = {
 };
 
 export default function HeroDrift({
+  brand = "Blackops Media Group",
   title = "Motion that answers back",
   description = "It follows your pointer, your scroll and your pause, and it moves in reply.",
   tags = ["Particle engine", "Scroll morphs", "Pointer field"],
@@ -23,7 +26,13 @@ export default function HeroDrift({
   return (
     <section aria-label="Introduction" data-drift="hero" className={`relative h-svh min-h-[40rem] overflow-x-clip ${className ?? ""}`}>
       <div className="mx-auto flex h-full w-[var(--container)] flex-col pb-7 pt-24 lg:pb-[1.625rem] lg:pt-[15svh]">
-        <BlurReveal as="h1" words={title} delay={introDelay} className="max-w-[11ch] text-balance text-[length:var(--text-display)]" />
+        {brand && (
+          <BlurReveal delay={introDelay} className="mb-4 inline-flex items-center gap-2.5 self-start border border-border bg-[color-mix(in_srgb,var(--background)_80%,transparent)] px-3.5 py-1.5 backdrop-blur-[8px]">
+            <CompanyLogo className="size-4 text-accent" />
+            <span className="font-mono text-[length:var(--text-label)] font-medium uppercase tracking-[0.08em] text-foreground">{brand}</span>
+          </BlurReveal>
+        )}
+        <BlurReveal as="h1" words={title} delay={introDelay + 0.05} className="max-w-[11ch] text-balance text-[length:var(--text-display)]" />
         <div className="flex-1" />
         <div className="relative">
           <div aria-hidden="true" className="absolute -left-[50vw] -right-[50vw] top-0 h-px bg-border lg:bg-[linear-gradient(90deg,var(--border)_0_33%,transparent_33%_67%,var(--border)_67%)]" />

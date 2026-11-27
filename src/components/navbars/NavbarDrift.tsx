@@ -3,6 +3,8 @@
 import { useRef, useState } from "react";
 import useMenuDialog from "@/components/kit/useMenuDialog";
 
+import CompanyLogo from "@/components/kit/CompanyLogo";
+
 type NavbarDriftProps = {
   brand?: string;
   navItems?: { name: string; href: string }[];
@@ -29,21 +31,9 @@ export default function NavbarDrift({
     <header className={`fixed left-1/2 top-3.5 z-50 w-[min(41.25rem,100%-2*var(--gutter))] -translate-x-1/2 ${className ?? ""}`}>
       <div ref={panelRef} className="relative border border-border bg-[color-mix(in_srgb,var(--background)_72%,transparent)] text-foreground backdrop-blur-[14px]">
         <div className="flex h-[2.875rem] items-center justify-between gap-4 py-[7px] pl-4 pr-[7px]">
-          <a href="#home" className="flex items-center gap-2.5 text-[length:var(--text-body)]">
-            <svg viewBox="0 0 18 18" aria-hidden="true" className="size-[18px]">
-              <g fill="currentColor">
-                <circle cx="9" cy="2.2" r="1.3" />
-                <circle cx="15.8" cy="9" r="1.3" />
-                <circle cx="9" cy="15.8" r="1.3" />
-                <circle cx="2.2" cy="9" r="1.3" />
-                <circle cx="13.8" cy="4.2" r=".9" />
-                <circle cx="13.8" cy="13.8" r=".9" />
-                <circle cx="4.2" cy="13.8" r=".9" />
-                <circle cx="4.2" cy="4.2" r=".9" />
-                <circle cx="9" cy="9" r="1.6" />
-              </g>
-            </svg>
-            <p className="whitespace-nowrap">{brand}</p>
+          <a href="#home" className="flex items-center gap-2.5 text-[length:var(--text-body)] font-medium">
+            <CompanyLogo className="size-[20px] text-accent" />
+            <p className="whitespace-nowrap tracking-wide">{brand}</p>
           </a>
           <nav aria-label="Main" className="hidden items-center gap-[1.625rem] min-[94.5rem]:flex">
             {navItems.map((item) => (

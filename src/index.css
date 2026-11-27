@@ -10,41 +10,41 @@
 
 /* webild:theme-ai */
 :root {
-  --primary-cta: #fbf1ec;
-  --primary-cta-text: #060302;
-  --secondary-cta: #140d0a;
-  --secondary-cta-text: #fbf1ec;
-  --background-accent: #ff8a50;
+  --primary-cta: #38bdf8;
+  --primary-cta-text: #07090e;
+  --secondary-cta: #131722;
+  --secondary-cta-text: #f1f5f9;
+  --background-accent: #38bdf8;
 
-  --background: #060302;
-  --foreground: #fbf1ec;
-  --card: #fdfaf8;
-  --card-foreground: var(--foreground);
+  --background: #07090e;
+  --foreground: #f1f5f9;
+  --card: #0e121a;
+  --card-foreground: #f1f5f9;
   --popover: var(--card);
-  --popover-foreground: var(--foreground);
+  --popover-foreground: var(--card-foreground);
   --primary: var(--primary-cta);
   --primary-foreground: var(--primary-cta-text);
   --secondary: var(--secondary-cta);
   --secondary-foreground: var(--secondary-cta-text);
-  --muted: #17100c;
-  --muted-foreground: #ad9f98;
+  --muted: #131722;
+  --muted-foreground: #94a3b8;
   --accent: var(--background-accent);
-  --accent-foreground: #060302;
-  --deep: #030101;
-  --deep-foreground: #fbf1ec;
-  --destructive: #ff6b6b;
-  --destructive-foreground: #020405;
-  --border: #322823;
-  --input: #252b2c;
+  --accent-foreground: #07090e;
+  --deep: #040508;
+  --deep-foreground: #f1f5f9;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #1e293b;
+  --input: #1e293b;
   --ring: var(--primary-cta);
 
-  --particle-a: #ff8a50;
-  --particle-b: #ff3d5a;
-  --particle-c: #ffd27a;
-  --particle-d: #ff5a2f;
-  --aurora-1: #5c1f0a;
-  --aurora-2: #7a2f14;
-  --aurora-3: #3a0f2a;
+  --particle-a: #38bdf8;
+  --particle-b: #818cf8;
+  --particle-c: #00f0ff;
+  --particle-d: #60a5fa;
+  --aurora-1: #0b1e36;
+  --aurora-2: #191438;
+  --aurora-3: #0c2b33;
 
   --font-heading: "Syne", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-body: "Geist", "Helvetica Neue", Helvetica, Arial, sans-serif;

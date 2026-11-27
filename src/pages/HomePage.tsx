@@ -1,4 +1,5 @@
 import HeroDrift from "@/components/sections/hero/HeroDrift";
+import TrustedByLogos from "@/components/sections/trusted/TrustedByLogos";
 import StatementStarPassage from "@/components/sections/statement/StatementStarPassage";
 import ServicesTiltCards from "@/components/sections/features/ServicesTiltCards";
 import AboutParticleShape from "@/components/sections/about/AboutParticleShape";
@@ -23,8 +24,9 @@ export default function HomePage() {
 
       <div id="home" data-webild-section="HeroDrift" data-webild-section-id="HeroDrift-1" data-section="home">
         <HeroDrift
-          title="Cinematic video & audio in Baltimore"
-          description="We create high-contrast visual brands, commercial films, crisp audio, and modern design for ambitious businesses in Baltimore."
+          brand="Blackops Media Group"
+          title="Cinematic video & audio production"
+          description="We create high-contrast visual brands, commercial films, crisp audio, and modern design for ambitious businesses nationwide."
           tags={[
             "Cinematic Video",
             "Audio Production",
@@ -36,6 +38,10 @@ export default function HomePage() {
           }}
           introDelay={1.4}
         />
+      </div>
+
+      <div id="trusted" data-webild-section="TrustedByLogos" data-webild-section-id="TrustedByLogos-1" data-section="trusted">
+        <TrustedByLogos />
       </div>
 
       <div id="stars" data-webild-section="StatementStarPassage" data-webild-section-id="StatementStarPassage-1" data-section="stars">
@@ -89,7 +95,7 @@ export default function HomePage() {
 
       <div id="model" data-webild-section="AboutParticleShape" data-webild-section-id="AboutParticleShape-1" data-section="model">
         <AboutParticleShape
-          title="Built in our Baltimore studio"
+          title="Built in our creative studio"
           description="Cinematic video, commercial photos, audio editing, and graphic design built for high-growth campaigns."
           note="Full-service audio, video, and design."
           hint="Move to inspect"
@@ -104,7 +110,7 @@ export default function HomePage() {
       <div id="testimonial" data-webild-section="TestimonialPaperCarousel" data-webild-section-id="TestimonialPaperCarousel-1" data-section="testimonial">
         <TestimonialPaperCarousel
           tag="Client Feedback"
-          title="Trusted by Baltimore Brands"
+          title="Trusted by Leading Brands"
           items={[
             {
               quote: "Blackops Media Group delivered a broadcast-quality video series that completely overhauled our brand presence.",
@@ -128,7 +134,7 @@ export default function HomePage() {
               imageAlt: "Handsome bearded elegant male in eyeglasses dressed in a dark blue suit with bow tie over grey vignette background."
             },
             {
-              quote: "From raw video footage to final edit, their Baltimore crew brought unmatched cinematic style and creative precision.",
+              quote: "From raw video footage to final edit, their production crew brought unmatched cinematic style and creative precision.",
               name: "Leah Webb",
               role: "Operations Manager",
               imageSrc: "https://img.b2bpic.net/free-photo/young-beautiful-business-woman-sitting-work-table-working-papers-laptop-isolated-gray_231208-11557.jpg",
@@ -147,8 +153,8 @@ export default function HomePage() {
               description: "We provide video production, commercial photography, graphic design, sound engineering, film editing, and custom web building."
             },
             {
-              title: "Are you based in Baltimore?",
-              description: "Yes. We operate out of Baltimore, Maryland, at 100 N Charles St, serving local businesses and regional brands."
+              title: "Where are you located and do you service outside your area?",
+              description: "We operate out of our main studio at 100 N Charles St, serving clients locally, nationally, and internationally."
             },
             {
               title: "How do project quotes work?",
@@ -172,7 +178,7 @@ export default function HomePage() {
           namePlaceholder="Your name"
           emailPlaceholder="Work email"
           buttonText="Request rates"
-          successText="Thanks! Our Baltimore studio team will contact you shortly."
+          successText="Thanks! Our studio production team will contact you shortly."
           errorText="Please provide a valid work email so we can reply."
         />
       </div>
