@@ -86,16 +86,20 @@ export default function Layout() {
               title: "Connect",
               links: [
                 {
+                  text: "1734 Maryland Avenue Baltimore, Md 21201",
+                  href: "#contact"
+                },
+                {
+                  text: "1 (863) 343-1726",
+                  href: "tel:18633431726"
+                },
+                {
+                  text: "Mon–Fri 9am–4pm | Sat 10am–2pm",
+                  href: "#contact"
+                },
+                {
                   text: "hello@blackopsmediagroup.com",
                   href: "mailto:hello@blackopsmediagroup.com"
-                },
-                {
-                  text: "100 N Charles St Studio",
-                  href: "#contact"
-                },
-                {
-                  text: "Start a Project",
-                  href: "#contact"
                 }
               ]
             }

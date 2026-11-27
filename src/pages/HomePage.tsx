@@ -159,7 +159,7 @@ export default function HomePage() {
             },
             {
               title: "Where are you located and do you service outside your area?",
-              description: "We operate out of our main studio at 100 N Charles St, serving clients locally, nationally, and internationally."
+              description: "We operate out of our main studio at 1734 Maryland Avenue Baltimore, Md 21201, serving clients locally, nationally, and internationally."
             },
             {
               title: "How do project quotes work?",
@@ -180,9 +180,15 @@ export default function HomePage() {
       <div id="contact" data-webild-section="ContactInlineField" data-webild-section-id="ContactInlineField-1" data-section="contact">
         <ContactInlineField
           title="Start a project"
+          subtitle="Reach out directly or send us your campaign brief for a prompt quote."
           namePlaceholder="Your name"
           emailPlaceholder="Work email"
           buttonText="Request rates"
+          address="1734 Maryland Avenue Baltimore, Md 21201"
+          phone="18633431726"
+          phoneFormatted="1 (863) 343-1726"
+          hoursWeekday="Monday–Friday 9am to 4pm"
+          hoursSaturday="Saturday 10am to 2pm"
           successText="Thanks! Our studio production team will contact you shortly."
           errorText="Please provide a valid work email so we can reply."
         />
