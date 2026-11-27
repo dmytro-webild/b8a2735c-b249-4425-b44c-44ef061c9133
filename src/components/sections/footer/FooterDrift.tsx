@@ -23,9 +23,8 @@ export default function FooterDrift({
     <footer aria-label="Footer" className={`relative pb-[var(--gutter)] ${className ?? ""}`}>
       <div className="mx-auto grid w-[var(--container)] grid-cols-2 gap-8 border border-border bg-[color-mix(in_srgb,var(--background)_85%,transparent)] p-[1.375rem] backdrop-blur-[14px] lg:grid-cols-[1.6fr_1fr_1fr_1fr] lg:p-8">
         <div className="col-span-2 grid content-start gap-[1.125rem] lg:col-span-1">
-          <a href="#home" className="flex items-center gap-2.5 text-[length:var(--text-body)] font-medium">
-            <CompanyLogo className="h-7 w-auto max-h-7 shrink-0" />
-            <p className="tracking-wide">{brand}</p>
+          <a href="#home" className="flex items-center shrink-0" aria-label={brand || "Blackops Media Group"}>
+            <CompanyLogo className="h-8 w-auto max-h-8 shrink-0" />
           </a>
           {note && <p className="max-w-[18.75rem] text-balance text-[length:var(--text-label)] uppercase leading-[1.35] tracking-[0.02em]">{note}</p>}
         </div>
