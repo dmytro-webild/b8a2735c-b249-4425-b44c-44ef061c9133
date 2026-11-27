@@ -33,6 +33,7 @@ export interface ProjectItem {
   tagline: string;
   description: string;
   imageSrc: string;
+  videoSrc?: string;
   imageAlt?: string;
   liveUrl?: string;
   featured?: boolean;
@@ -55,8 +56,8 @@ const DEFAULT_PROJECTS: ProjectItem[] = [
     tagline: "Custom Health Platform & Patient Portal",
     description:
       "A high-contrast, modern medical website and booking system designed for primary care clinics. Engineered for rapid patient onboarding, interactive telehealth booking, and mobile responsiveness with streamlined clinical UI.",
-    imageSrc: "https://img.b2bpic.net/free-photo/doctor-working-laptop-office-medical-service-concept_1150-13797.jpg",
-    imageAlt: "Five Star Health MD website preview",
+    imageSrc: "https://images.pexels.com/photos/18828740/pexels-photo-18828740.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    imageAlt: "Female doctor at Five Star Health MD clinic website preview",
     liveUrl: "https://fivestarhealthmd.wixstudio.com/5starhealthmd",
     featured: true,
     services: ["Custom Web Building", "Medical UX/UI", "Appointment Workflow", "SEO Optimization"],
@@ -114,41 +115,41 @@ const DEFAULT_PROJECTS: ProjectItem[] = [
   {
     id: "vivid-threads",
     title: "Vivid Threads",
-    client: "Vivid Threads",
+    client: "Vivid Threads Manufacturing",
     category: "Web Development",
     year: "2026",
-    tagline: "Modern Lifestyle & Apparel Web Showcase",
+    tagline: "Custom Apparel & Textile Manufacturing Platform",
     description:
-      "A sleek, lifestyle-driven web build designed to showcase dynamic lookbooks, custom brand media, and fast interactive shopping galleries.",
-    imageSrc: "https://img.b2bpic.net/free-photo/man-doing-product-photography_23-2148970201.jpg?_wi=1",
-    imageAlt: "Vivid Threads website preview",
+      "A high-performance B2B web platform for Vivid Threads, a premier clothing manufacturer. Showcases custom garment production capabilities, sustainable fabric sourcing catalogs, wholesale ordering portals, and automated quote generation.",
+    imageSrc: "https://images.pexels.com/photos/16544025/pexels-photo-16544025.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    imageAlt: "Vivid Threads clothing manufacturer website preview",
     liveUrl: "https://www.vividthreads.com/",
     featured: false,
-    services: ["Web Building & Design", "Lookbook Showcase", "Media Optimization", "Mobile-First UX"],
+    services: ["B2B Web Building", "Manufacturer Portal", "Wholesale Catalog UX", "Supply Chain Showcase"],
     results: [
-      "+140% Engagement & Time on Site",
-      "Ultra-Fast Media Loading",
-      "Custom Interactive Lookbook Grid",
+      "+220% Wholesale Inquiry Volume",
+      "Digital Fabric & Cut Catalog",
+      "Global B2B Buyer Portal",
     ],
   },
   {
     id: "one-dose",
     title: "One Dose",
-    client: "One Dose Health",
+    client: "One Dose Perfumes",
     category: "Web Development",
     year: "2026",
-    tagline: "Clinical Services & Health Portal",
+    tagline: "Luxury Perfume Store & Fragrance E-Commerce",
     description:
-      "Clean, modern medical web platform providing patients with direct access to treatment information, consultation scheduling, and healthcare resources.",
-    imageSrc: "https://img.b2bpic.net/free-photo/freelancer-using-retouching-program-touchscreen-device_482257-121823.jpg?_wi=1",
-    imageAlt: "One Dose website preview",
+      "A sophisticated, high-end e-commerce website for One Dose luxury perfume store. Designed to showcase artisanal fragrance collections, interactive scent profiling, notes exploration, and seamless online shopping.",
+    imageSrc: "https://images.pexels.com/photos/8361488/pexels-photo-8361488.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    imageAlt: "One Dose perfume store website preview",
     liveUrl: "https://blackops1368.wixsite.com/one-dose",
     featured: false,
-    services: ["Custom Web Building", "Healthcare UX", "Patient Consultation Funnel", "SEO & Analytics"],
+    services: ["E-Commerce Web Building", "Fragrance Catalog Design", "Scent Profiling UX", "Brand Identity"],
     results: [
-      "Instant Consultation Booking",
-      "High-Trust Design System",
-      "Optimized Mobile Experience",
+      "+190% Online Perfume Sales",
+      "Interactive Fragrance Finder",
+      "Luxury E-Commerce Design System",
     ],
   },
   {
@@ -159,9 +160,10 @@ const DEFAULT_PROJECTS: ProjectItem[] = [
     year: "2026",
     tagline: "Cinematic 4K Brand & Product Showcase",
     description:
-      "Full cinematic video production including dark-theme color grading, high-speed camera work, glitch visual effects, and broadcast-ready finishing for enterprise marketing.",
-    imageSrc: "https://img.b2bpic.net/free-photo/freelancer-using-retouching-program-touchscreen-device_482257-121823.jpg?_wi=2",
-    imageAlt: "Video production crew editing commercial film",
+      "Full cinematic 4K video production reel featuring dark-theme color grading, high-speed camera work, glitch visual effects, and broadcast-ready finishing for enterprise marketing.",
+    imageSrc: "https://images.pexels.com/photos/40399670/pexels-photo-40399670.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    videoSrc: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
+    imageAlt: "Aethel Motion 4K cinematic commercial video reel preview",
     liveUrl: "#contact",
     featured: false,
     services: ["4K Video Production", "Cinematic Color Grading", "Glitch Motion Graphics", "Sound Sync"],
@@ -396,11 +398,24 @@ export default function PortfolioWorkShowcase({
             >
               {/* Media Container */}
               <div className="relative aspect-[16/10] w-full overflow-hidden bg-deep">
-                <Media
-                  src={project.imageSrc}
-                  alt={project.imageAlt ?? project.title}
-                  className="size-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                />
+                {project.videoSrc ? (
+                  <video
+                    src={project.videoSrc}
+                    poster={project.imageSrc}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="size-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    aria-label={project.imageAlt ?? project.title}
+                  />
+                ) : (
+                  <Media
+                    src={project.imageSrc}
+                    alt={project.imageAlt ?? project.title}
+                    className="size-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  />
+                )}
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-80 transition-opacity duration-300 group-hover:opacity-60" />
 
                 {/* Top Badges */}
@@ -548,11 +563,24 @@ export default function PortfolioWorkShowcase({
 
                 {/* Modal Media */}
                 <div className="relative aspect-[16/9] w-full overflow-hidden border border-border bg-deep">
-                  <Media
-                    src={selectedProject.imageSrc}
-                    alt={selectedProject.imageAlt ?? selectedProject.title}
-                    className="size-full object-cover"
-                  />
+                  {selectedProject.videoSrc ? (
+                    <video
+                      src={selectedProject.videoSrc}
+                      poster={selectedProject.imageSrc}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      className="size-full object-cover"
+                      aria-label={selectedProject.imageAlt ?? selectedProject.title}
+                    />
+                  ) : (
+                    <Media
+                      src={selectedProject.imageSrc}
+                      alt={selectedProject.imageAlt ?? selectedProject.title}
+                      className="size-full object-cover"
+                    />
+                  )}
                 </div>
 
                 {/* Description & Details */}

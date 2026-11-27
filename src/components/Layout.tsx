@@ -98,8 +98,8 @@ export default function Layout() {
                   href: "#contact"
                 },
                 {
-                  text: "hello@blackopsmediagroup.com",
-                  href: "mailto:hello@blackopsmediagroup.com"
+                  text: "info@blackopsmediagroup.online",
+                  href: "mailto:info@blackopsmediagroup.online"
                 }
               ]
             }
