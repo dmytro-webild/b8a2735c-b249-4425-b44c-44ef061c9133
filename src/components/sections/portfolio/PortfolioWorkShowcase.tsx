@@ -52,14 +52,14 @@ const DEFAULT_PROJECTS: ProjectItem[] = [
     client: "Five Star Health & Wellness",
     category: "Web Development",
     year: "2026",
-    tagline: "Wix Studio Health Platform & Patient Portal",
+    tagline: "Custom Health Platform & Patient Portal",
     description:
       "A high-contrast, modern medical website and booking system designed for primary care clinics. Engineered for rapid patient onboarding, interactive telehealth booking, and mobile responsiveness with streamlined clinical UI.",
     imageSrc: "https://img.b2bpic.net/free-photo/doctor-working-laptop-office-medical-service-concept_1150-13797.jpg",
     imageAlt: "Five Star Health MD website preview",
     liveUrl: "https://fivestarhealthmd.wixstudio.com/5starhealthmd",
     featured: true,
-    services: ["Wix Studio Web Building", "Medical UX/UI", "Appointment Workflow", "SEO Optimization"],
+    services: ["Custom Web Building", "Medical UX/UI", "Appointment Workflow", "SEO Optimization"],
     results: [
       "+210% Online Patient Bookings",
       "Sub-1.2s Mobile Page Load Speed",
@@ -137,14 +137,14 @@ const DEFAULT_PROJECTS: ProjectItem[] = [
     client: "One Dose Health",
     category: "Web Development",
     year: "2026",
-    tagline: "Wix Health & Clinical Services Portal",
+    tagline: "Clinical Services & Health Portal",
     description:
       "Clean, modern medical web platform providing patients with direct access to treatment information, consultation scheduling, and healthcare resources.",
     imageSrc: "https://img.b2bpic.net/free-photo/freelancer-using-retouching-program-touchscreen-device_482257-121823.jpg?_wi=1",
     imageAlt: "One Dose website preview",
     liveUrl: "https://blackops1368.wixsite.com/one-dose",
     featured: false,
-    services: ["Wix Site Building", "Healthcare UX", "Patient Consultation Funnel", "SEO & Analytics"],
+    services: ["Custom Web Building", "Healthcare UX", "Patient Consultation Funnel", "SEO & Analytics"],
     results: [
       "Instant Consultation Booking",
       "High-Trust Design System",

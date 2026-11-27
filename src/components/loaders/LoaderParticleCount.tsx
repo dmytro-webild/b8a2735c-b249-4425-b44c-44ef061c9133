@@ -65,7 +65,7 @@ export default function LoaderParticleCount({ brand = "Drift", label = "Particle
         className="mx-auto flex h-full w-[var(--container)] flex-col justify-between py-7"
       >
         <div className="flex items-center gap-2.5 text-[length:var(--text-body)]">
-          <CompanyLogo className="size-[20px] text-accent" />
+          <CompanyLogo className="h-6 w-auto max-h-6 shrink-0" />
           <p>{brand}</p>
         </div>
         <div className="grid gap-1.5">
