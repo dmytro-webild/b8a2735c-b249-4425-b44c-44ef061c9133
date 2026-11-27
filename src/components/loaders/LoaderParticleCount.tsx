@@ -64,9 +64,8 @@ export default function LoaderParticleCount({ brand = "Drift", label = "Particle
         transition={{ duration: 0.5, delay: introDelay, ease: EASE }}
         className="mx-auto flex h-full w-[var(--container)] flex-col justify-between py-7"
       >
-        <div className="flex items-center gap-2.5 text-[length:var(--text-body)]">
-          <CompanyLogo className="h-6 w-auto max-h-6 shrink-0" />
-          <p>{brand}</p>
+        <div className="flex items-center shrink-0" aria-label={brand || "Blackops Media Group"}>
+          <CompanyLogo className="h-8 w-auto max-h-8 shrink-0" />
         </div>
         <div className="grid gap-1.5">
           <p ref={numRef} className="border-l border-muted-foreground pl-3.5 text-[length:var(--text-display)] font-light tabular-nums leading-none tracking-[-0.035em]">

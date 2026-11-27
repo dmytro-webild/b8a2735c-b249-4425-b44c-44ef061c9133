@@ -30,10 +30,9 @@ export default function NavbarDrift({
   return (
     <header className={`fixed left-1/2 top-3.5 z-50 w-[min(41.25rem,100%-2*var(--gutter))] -translate-x-1/2 ${className ?? ""}`}>
       <div ref={panelRef} className="relative border border-border bg-[color-mix(in_srgb,var(--background)_72%,transparent)] text-foreground backdrop-blur-[14px]">
-        <div className="flex h-[2.875rem] items-center justify-between gap-4 py-[7px] pl-4 pr-[7px]">
-          <a href="#home" className="flex items-center gap-2.5 text-[length:var(--text-body)] font-medium">
-            <CompanyLogo className="h-6 w-auto max-h-6 shrink-0" />
-            <p className="whitespace-nowrap tracking-wide">{brand}</p>
+        <div className="flex h-[3.25rem] items-center justify-between gap-4 py-1.5 pl-4 pr-[7px]">
+          <a href="#home" className="flex items-center shrink-0" aria-label={brand || "Blackops Media Group"}>
+            <CompanyLogo className="h-8 w-auto max-h-8 shrink-0" />
           </a>
           <nav aria-label="Main" className="hidden items-center gap-[1.625rem] min-[94.5rem]:flex">
             {navItems.map((item) => (
