@@ -211,6 +211,46 @@ const DEFAULT_PROJECTS: ProjectItem[] = [
       "+85% Brand Recognition Index",
     ],
   },
+  {
+    id: "el-grande-allwood-tequila",
+    title: "El Grande Allwood Tequila Poster",
+    client: "Allwood Tequila",
+    category: "Graphic Design",
+    year: "2026",
+    tagline: "Custom Vintage Poster & Label Illustration",
+    description:
+      "Custom vintage-style tequila poster and packaging illustration featuring bold character artwork, hand-drawn typography, dynamic composition, and vibrant retro colors.",
+    imageSrc: "https://storage.googleapis.com/webild/users/user_3MflL9ZEIL32aPnF1RkSL5Jnlzr/uploaded-1795753303740-2d00epmx.jpg",
+    imageAlt: "El Grande Allwood Tequila vintage illustration poster artwork",
+    liveUrl: "#contact",
+    featured: false,
+    services: ["Custom Illustration", "Poster & Packaging Design", "Character Design", "Brand Artwork"],
+    results: [
+      "Original Custom Graphic Artwork",
+      "Print & Merchandise Ready",
+      "High-Impact Visual Branding",
+    ],
+  },
+  {
+    id: "ncaa-college-world-series-2025",
+    title: "NCAA College World Series 2025",
+    client: "NCAA Baseball",
+    category: "Graphic Design",
+    year: "2025",
+    tagline: "Official Championship Graphic & Paint Splatter Design",
+    description:
+      "High-energy graphic design created for the 2025 NCAA Men's College World Series 75th Anniversary, featuring bold paint-splatter typography, collegiate team logos, and custom sports apparel artwork.",
+    imageSrc: "https://storage.googleapis.com/webild/users/user_3MflL9ZEIL32aPnF1RkSL5Jnlzr/uploaded-1795753303742-dk0c4dr0.jpg",
+    imageAlt: "NCAA Baseball Championship 2025 Men's College World Series artwork design",
+    liveUrl: "#contact",
+    featured: false,
+    services: ["Sports Graphic Design", "Merchandise & Apparel Art", "Custom Typography", "Paint Splatter Artwork"],
+    results: [
+      "Official Championship Artwork",
+      "High-Resolution Vector Graphics",
+      "National Apparel & Merchandise Release",
+    ],
+  },
 ];
 
 const CATEGORIES: { label: PortfolioCategory; icon: typeof Globe }[] = [
